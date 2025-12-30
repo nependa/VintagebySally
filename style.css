@@ -1,0 +1,327 @@
+/* Color Palette: Peach (#ffe5d9), Soft Pink (#ffcad4), Vintage Brown (#6d597a) */
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Georgia', serif;
+}
+body { background-color: #fff9f8; 
+       color: #4a4a4a; }
+
+header { 
+    background: #ffe5d9; 
+    padding: 25px; 
+    text-align: center; 
+    border-bottom: 2px solid #ffcad4; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+}
+header h1 { 
+    color: #6d597a; 
+    letter-spacing: 2px;
+}
+
+nav { 
+    margin-top: 15px;
+}
+nav a { 
+    margin: 0 15px; 
+    text-decoration: none; 
+    color: #6d597a; 
+    font-weight: bold;
+}
+.cart-nav-btn { 
+    background: #ffcad4; 
+    color: #6d597a; 
+    border: 1px solid #6d597a; 
+    padding: 5px 15px; 
+    cursor: pointer; 
+    border-radius: 20px; 
+    font-weight: bold;
+}
+
+.hero { 
+    background-color: #fbc4ab; 
+    padding: 80px 20px; 
+    text-align: center; 
+    color: white; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.section-title { 
+    text-align: center; 
+    margin: 40px 0; 
+    color: #6d597a;
+}
+
+.product-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+    padding: 0 20px;
+}
+.product-card { 
+    background: white; 
+    border-radius: 15px; 
+    padding: 20px; 
+    width: 280px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(255, 202, 212, 0.3); 
+    transition: 0.3s; 
+    cursor: pointer; 
+    border: 1px solid #ffe5d9;
+}
+.product-card:hover { 
+    transform: translateY(-10px);
+}
+.product-image { 
+     
+    height: auto; 
+    width: 100%;
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 15px; 
+    color: #6d597a; 
+    font-style: italic;
+}
+
+.view-btn { 
+    background: none; 
+    border: 1px solid #fbc4ab; 
+    color: #fbc4ab; 
+    padding: 8px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 10px;
+}
+
+/* Modal & Sidebar */
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 200; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(109, 89, 122, 0.5);
+}
+.modal-content {
+    /* Ensure the modal can scroll if the content is long */
+    max-height: 90vh; 
+    overflow-y: auto;
+    background: white; 
+    margin: 5% auto; /* Reduced margin to give more space */
+    padding: 30px; 
+    width: 50%; /* Slightly wider for better layout */
+    border-radius: 20px; 
+    position: relative; 
+    border: 5px solid #ffcad4;
+}
+.close { 
+    position: absolute; 
+    right: 20px; 
+    top: 10px; 
+    font-size: 30px; 
+    cursor: pointer; 
+    color: #6d597a;
+}
+.modal-price { 
+    font-size: 24px; 
+    margin: 20px 0; 
+    color: #fbc4ab; 
+    font-weight: bold;
+}
+.add-to-cart-btn { 
+    background: #6d597a; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    width: 100%; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 16px;
+}
+
+.view-gallery-btn { 
+    background: #6d597a; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    width: 100%; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-size: 16px;
+    margin-top: 1rem;
+}
+.buttons:hover {
+    background: transparent;
+    color: #6d597a;
+    border: 1px solid #6d597a;
+}
+
+/* --- CAROUSEL STYLES --- */
+.carousel-wrapper {
+    position: relative;
+    max-width: 50%;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: fit-content;
+    box-sizing: border-box;
+}
+.carousel-slide img {
+    width: 100%;
+    max-height: 350px; /* Adjust this number to make more room for text */
+    object-fit: contain; /* Ensures the image isn't stretched or cut off */
+    display: block;
+    margin: 0 auto;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.prev-button { left: 0; border-radius: 0 4px 4px 0; }
+.next-button { right: 0; border-radius: 4px 0 0 4px; }
+/* --- END CAROUSEL STYLES --- */
+
+/*SideBar*/
+.sidebar { 
+    position: fixed; 
+    right: -350px; 
+    top: 0; 
+    width: 320px; 
+    height: 100%; 
+    background: white; 
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1); 
+    transition: 0.4s; 
+    padding: 30px; 
+    z-index: 300; 
+    border-left: 5px solid #ffcad4;
+}
+.sidebar.active { 
+    right: 0;
+}
+.close-sidebar { 
+    background: #ffe5d9; 
+    border: none; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-bottom: 20px;
+}
+.checkout-btn { 
+    width: 100%; 
+    background: #fbc4ab; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    margin-top: 20px; 
+    cursor: pointer; 
+    border-radius: 10px; 
+    font-weight: bold; 
+    font-size: 18px;
+}
+
+.about-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ffe5d9;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Responsive  Design */
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    color: #6d597a;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.about-text p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-visual {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.sally-photo {
+    width: 100%;
+    height: 400px;
+    background-color: #ffcad4;
+    border-radius: 100px 100px 0 0; /* Trendy arch shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6d597a;
+    font-weight: bold;
+    border: 3px solid #ffe5d9;
+}
+
+footer { 
+    background: #ffe5d9; 
+    color: #6d597a; 
+    padding: 40px 20px 20px; 
+    margin-top: 60px; 
+    border-top: 2px solid #ffcad4;
+}
+.footer-container { 
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+.footer-bottom { 
+    text-align: center; 
+    margin-top: 30px; 
+    font-size: 12px; 
+    opacity: 0.7;
+}
+.footer-links {
+    text-decoration: none;
+    font-weight: 200px;
+    color: #6d597a;
+}
+.footer-links:hover {
+    text-decoration: underline;
+}
